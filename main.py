@@ -20,19 +20,15 @@ def pdfminer(file, output):
     with open(output, 'w') as f: 
          f.write(txt)
 
-
-   
 file = "test.pdf" 
 output = "info.txt"
 pdfminer(file, output)
 
 text_file = open('info.txt','r')
 stringData = text_file.read()
-email='felix@google.com'
 text_file.close()
-print(stringData)
 
-email_pattern = '[a-zA-Z]+@[a-zA-Z]+\.[A-Z|a-z]{2,}'
+email_pattern = '[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Z|a-z]{2,}'
 name_pattern = '[a-zA-Z]+ [a-zA-Z]+' 
 phone_pattern = "\(?\d{3}[-.)]\d{3}[-.]\d{4}"
 
