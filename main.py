@@ -32,19 +32,14 @@ email='felix@google.com'
 text_file.close()
 print(stringData)
 
-email_pattern = '\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b'
+email_pattern = '[a-zA-Z]+@[a-zA-Z]+\.[A-Z|a-z]{2,}'
 name_pattern = '[a-zA-Z]+ [a-zA-Z]+' 
 phone_pattern = "\(?\d{3}[-.)]\d{3}[-.]\d{4}"
 
-if(re.search(name_pattern,"sdada adadas")):
-    print(re.search(phone_pattern,"123-234-2344"))
-else:
-    print('No')
-
+email_list = re.findall(email_pattern, stringData)
 name_list = re.findall(name_pattern, stringData)
 phone_list = re.findall(phone_pattern,stringData)
-# name_list = re.findall(name_pattern,stringData)
-# phone_list = re.findall(phone_pattern,stringData)
+
+print(email_list)
+print(name_list)
 print(phone_list)
-# print(name_list)
-# print(phone_list)
